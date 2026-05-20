@@ -45,7 +45,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
         'lastName': _lastNameCtrl.text.trim(),
         'phone': _phoneCtrl.text.trim(),
       });
-      await ref.read(authProvider.notifier).refreshUser();
+      await ref.read(authStateProvider.notifier).refreshUser();
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text('Profile updated!'), backgroundColor: AppTheme.success));
